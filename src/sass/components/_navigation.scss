@@ -1,5 +1,4 @@
 .nav {
-  position: relative;
   left: 0;
   right: 0;
   top: 0;
@@ -55,9 +54,8 @@
   }
 }
 
-
 .nav__list-item:not(:last-child) {
-    @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 1200px) {
     margin-right: 35px;
   }
 }
