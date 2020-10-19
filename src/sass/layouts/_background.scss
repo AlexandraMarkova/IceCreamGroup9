@@ -44,13 +44,13 @@
         }
 
         @include for-size (desktop) {
-            max-width: 1280px;
+            max-width: 1200px;
             background-image: url(../images/desktop/tasty.png),
             url(../images/desktop/bio.png),
             url(../images/desktop/icecream-hero.png),
             url(/images/tablet/Ellipse.svg);
             background-repeat: no-repeat;
-            background-position: bottom right 69px, bottom 45px left 38px, bottom left 555px, bottom 72px left 478px;
+            background-position: bottom right 69px, bottom 45px left 38px, bottom left 555px, bottom 73px left 440px;
             background-size: 293px 232px, 188px 191px, 236px 557px, 538px 538px;
 
             @media screen and (min-device-pixel-ratio: 2),
