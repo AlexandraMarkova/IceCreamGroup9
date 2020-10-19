@@ -7,8 +7,8 @@
   color: $accent;
   font-size: 8px;
   line-height: 1.25;
-  transition: background-color $transition-argument;
   cursor: pointer;
+  transition: background-color $transition-argument;
 
   &:hover,
   &:focus {
