@@ -383,6 +383,7 @@ a {
   color: #d41443;
   font-size: 8px;
   line-height: 1.25;
+  cursor: pointer;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .button:hover, .button:focus {
@@ -442,6 +443,7 @@ a {
   margin: 0px;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 }
 
 .nav__menu-button {
@@ -497,7 +499,6 @@ a {
 }
 
 .nav {
-  position: relative;
   left: 0;
   right: 0;
   top: 0;
@@ -566,6 +567,9 @@ a {
 .nav__list-item-text {
   margin-left: 21px;
   color: #ffffff;
+}
+.nav__list-item-text:hover, .nav__list-item-text:focus {
+  color: #d41443;
 }
 @media (min-width: 1200px) {
   .nav__list-item-text {
@@ -637,40 +641,48 @@ a {
 }
 
 .background {
-  background-image: url(/icecream-hero.9a31d297.png), url(/Ellipse.9b9dad28.svg), linear-gradient(#ffb8ca, #ffb8ca);
+  background-image: linear-gradient(#ffb8ca, #ffb8ca);
+}
+
+.background-image {
+  background-image: url(/icecream-hero.9a31d297.png), url(/Ellipse.9b9dad28.svg);
   background-repeat: no-repeat;
-  background-position: bottom right 32px, bottom 75px right, center;
-  background-size: 171px 410px, 284px 344px, 100%;
+  background-position: bottom right 32px, bottom 75px right;
+  background-size: 171px 410px, 284px 344px;
 }
 @media screen and (min-device-pixel-ratio: 2), screen and (min-resolution: 192dpi), screen and (min-resolution: 2dppx) {
-  .background {
-    background-image: url(/icecream-hero@2x.6a271c0c.png), url(/Ellipse.9b9dad28.svg), linear-gradient(#ffb8ca, #ffb8ca);
+  .background-image {
+    background-image: url(/icecream-hero@2x.6a271c0c.png), url(/Ellipse.9b9dad28.svg);
   }
 }
 @media (min-width: 768px) {
-  .background {
-    background-image: url(/tasty.efae9998.png), url(/bio.14ebdf1d.png), url(/icecream-hero.407f578c.png), url(/Ellipse.a6bf09f6.svg), linear-gradient(#ffb8ca, #ffb8ca);
+  .background-image {
+    max-width: 768px;
+    margin-left: auto;
+    margin-right: auto;
+    background-image: url(/tasty.efae9998.png), url(/bio.14ebdf1d.png), url(/icecream-hero.407f578c.png), url(/Ellipse.a6bf09f6.svg);
     background-repeat: no-repeat;
-    background-position: bottom right 34px, bottom 28px left 34px, bottom left 378px, bottom 46px left 304px, center;
-    background-size: 168px 133px, 124px 126px, 143px 336px, 324px 322px, 100%;
+    background-position: bottom right 34px, bottom 28px left 34px, bottom left 378px, bottom 46px left 304px;
+    background-size: 168px 133px, 124px 126px, 143px 336px, 324px 322px;
   }
 }
 @media screen and (min-width: 768px) and (min-device-pixel-ratio: 2), screen and (min-width: 768px) and (min-resolution: 192dpi), screen and (min-width: 768px) and (min-resolution: 2dppx) {
-  .background {
-    background-image: url(/tasty@2x.ecd6bf4e.png), url(/bio@2x.5c550e17.png), url(/icecream-hero@2x.67b5a8bc.png), url(/Ellipse.a6bf09f6.svg), linear-gradient(#ffb8ca, #ffb8ca);
+  .background-image {
+    background-image: url(/tasty@2x.ecd6bf4e.png), url(/bio@2x.5c550e17.png), url(/icecream-hero@2x.67b5a8bc.png), url(/Ellipse.a6bf09f6.svg);
   }
 }
 @media (min-width: 1200px) {
-  .background {
-    background-image: url(/tasty.4caef41b.png), url(/bio.44e70662.png), url(/icecream-hero.74be21ab.png), url(/Ellipse.a6bf09f6.svg), linear-gradient(#ffb8ca, #ffb8ca);
+  .background-image {
+    max-width: 1200px;
+    background-image: url(/tasty.4caef41b.png), url(/bio.44e70662.png), url(/icecream-hero.74be21ab.png), url(/Ellipse.a6bf09f6.svg);
     background-repeat: no-repeat;
-    background-position: bottom right 69px, bottom 45px left 38px, bottom left 555px, bottom 72px left 478px, center;
-    background-size: 293px 232px, 188px 191px, 236px 557px, 538px 538px, 100%;
+    background-position: bottom right 69px, bottom 45px left 38px, bottom left 555px, bottom 73px left 440px;
+    background-size: 293px 232px, 188px 191px, 236px 557px, 538px 538px;
   }
 }
 @media screen and (min-width: 1200px) and (min-device-pixel-ratio: 2), screen and (min-width: 1200px) and (min-resolution: 192dpi), screen and (min-width: 1200px) and (min-resolution: 2dppx) {
-  .background {
-    background-image: url(/tasty@2x.e7422adf.png), url(/bio@2x.c92995eb.png), url(/icecream-hero@2x.5d92786a.png), url(/Ellipse.a6bf09f6.svg), linear-gradient(#ffb8ca, #ffb8ca);
+  .background-image {
+    background-image: url(/tasty@2x.e7422adf.png), url(/bio@2x.c92995eb.png), url(/icecream-hero@2x.5d92786a.png), url(/Ellipse.a6bf09f6.svg);
   }
 }
 
@@ -1952,6 +1964,7 @@ a {
   font-size: 12px;
   line-height: 1.83;
   font-weight: 700;
+  letter-spacing: 0;
   text-align: right;
   margin-bottom: 0;
   margin-top: 0;
