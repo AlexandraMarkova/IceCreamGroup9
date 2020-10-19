@@ -117,83 +117,24 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"js/menu.js":[function(require,module,exports) {
+(function () {
+  var menuBtnOpenRef = document.querySelector('[data-menu-button]');
+  var menuBtnCloseRef = document.querySelector('[data-menu-button-close]');
+  var mobileMenuRef = document.querySelector('[data-menu]');
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
-
-  return bundleURL;
-}
-
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
-
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
-
-  return '/';
-}
-
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
-
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
-
-function updateLink(link) {
-  var newLink = link.cloneNode();
-
-  newLink.onload = function () {
-    link.remove();
+  var toggleMenu = function toggleMenu(e) {
+    var btn = e.target;
+    var expanded = btn.getAttribute('aria-expanded') === 'true' || false;
+    btn.classList.toggle('is-open');
+    btn.setAttribute('aria-expanded', !expanded);
+    mobileMenuRef.classList.toggle('is-open');
   };
 
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
-
-var cssTimeout = null;
-
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
-
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
-
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
-      }
-    }
-
-    cssTimeout = null;
-  }, 50);
-}
-
-module.exports = reloadCSS;
-},{"./bundle-url":"../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"sass/main.scss":[function(require,module,exports) {
-var reloadCSS = require('_css_loader');
-
-module.hot.dispose(reloadCSS);
-module.hot.accept(reloadCSS);
-},{"./..\\images\\mobile\\icecream-hero.png":[["icecream-hero.9a31d297.png","images/mobile/icecream-hero.png"],"images/mobile/icecream-hero.png"],"D:\\Рабочий стол\\Project resume\\GoIt\\домашки\\IceCreamGroup9\\src\\images\\mobile\\Ellipse.svg":[["Ellipse.9b9dad28.svg","images/mobile/Ellipse.svg"],"images/mobile/Ellipse.svg"],"./..\\images\\mobile\\icecream-hero@2x.png":[["icecream-hero@2x.6a271c0c.png","images/mobile/icecream-hero@2x.png"],"images/mobile/icecream-hero@2x.png"],"./..\\images\\tablet\\tasty.png":[["tasty.efae9998.png","images/tablet/tasty.png"],"images/tablet/tasty.png"],"./..\\images\\tablet\\bio.png":[["bio.14ebdf1d.png","images/tablet/bio.png"],"images/tablet/bio.png"],"./..\\images\\tablet\\icecream-hero.png":[["icecream-hero.407f578c.png","images/tablet/icecream-hero.png"],"images/tablet/icecream-hero.png"],"D:\\Рабочий стол\\Project resume\\GoIt\\домашки\\IceCreamGroup9\\src\\images\\tablet\\Ellipse.svg":[["Ellipse.a6bf09f6.svg","images/tablet/Ellipse.svg"],"images/tablet/Ellipse.svg"],"./..\\images\\tablet\\tasty@2x.png":[["tasty@2x.ecd6bf4e.png","images/tablet/tasty@2x.png"],"images/tablet/tasty@2x.png"],"./..\\images\\tablet\\bio@2x.png":[["bio@2x.5c550e17.png","images/tablet/bio@2x.png"],"images/tablet/bio@2x.png"],"./..\\images\\tablet\\icecream-hero@2x.png":[["icecream-hero@2x.67b5a8bc.png","images/tablet/icecream-hero@2x.png"],"images/tablet/icecream-hero@2x.png"],"./..\\images\\desktop\\tasty.png":[["tasty.4caef41b.png","images/desktop/tasty.png"],"images/desktop/tasty.png"],"./..\\images\\desktop\\bio.png":[["bio.44e70662.png","images/desktop/bio.png"],"images/desktop/bio.png"],"./..\\images\\desktop\\icecream-hero.png":[["icecream-hero.74be21ab.png","images/desktop/icecream-hero.png"],"images/desktop/icecream-hero.png"],"./..\\images\\desktop\\tasty@2x.png":[["tasty@2x.e7422adf.png","images/desktop/tasty@2x.png"],"images/desktop/tasty@2x.png"],"./..\\images\\desktop\\bio@2x.png":[["bio@2x.c92995eb.png","images/desktop/bio@2x.png"],"images/desktop/bio@2x.png"],"./..\\images\\desktop\\icecream-hero@2x.png":[["icecream-hero@2x.5d92786a.png","images/desktop/icecream-hero@2x.png"],"images/desktop/icecream-hero@2x.png"],"./..\\images\\quotes.svg":[["quotes.4d7be276.svg","images/quotes.svg"],"images/quotes.svg"],"./..\\images\\mobile\\sectionbg1_mob.png":[["sectionbg1_mob.dcf8756a.png","images/mobile/sectionbg1_mob.png"],"images/mobile/sectionbg1_mob.png"],"./..\\images\\desktop\\sectionbg1__destop.png":[["sectionbg1__destop.6d9c8b36.png","images/desktop/sectionbg1__destop.png"],"images/desktop/sectionbg1__destop.png"],"_css_loader":"../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
-"use strict";
-
-require("./sass/main.scss");
-},{"./sass/main.scss":"sass/main.scss"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+  menuBtnOpenRef.addEventListener('click', toggleMenu);
+  menuBtnCloseRef.addEventListener('click', toggleMenu);
+})();
+},{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -397,5 +338,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","index.js"], null)
-//# sourceMappingURL=/src.e31bb0bc.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/menu.js"], null)
+//# sourceMappingURL=/menu.0c91648c.js.map
