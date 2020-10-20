@@ -66,8 +66,8 @@
 
   &:hover,
   &:focus {
-  color: $accent;
-}
+    color: $accent;
+  }
 
   @include for-size(desktop) {
     margin: 0;
@@ -77,4 +77,3 @@
 .nav__list-item-text.current {
   color: $accent;
 }
-
