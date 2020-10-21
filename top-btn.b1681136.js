@@ -117,23 +117,25 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/menu.js":[function(require,module,exports) {
-(function () {
-  var menuBtnOpenRef = document.querySelector('[data-menu-button]');
-  var menuBtnCloseRef = document.querySelector('[data-menu-button-close]');
-  var mobileMenuRef = document.querySelector('[data-menu]');
+})({"js/top-btn.js":[function(require,module,exports) {
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+  scrollFunction();
+};
 
-  var toggleMenu = function toggleMenu(e) {
-    var btn = e.target;
-    var expanded = btn.getAttribute('aria-expanded') === 'true' || false;
-    btn.classList.toggle('is-open');
-    btn.setAttribute('aria-expanded', !expanded);
-    mobileMenuRef.classList.toggle('is-open');
-  };
+function scrollFunction() {
+  if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+    document.getElementById("myBtn").style.display = "block";
+  } else {
+    document.getElementById("myBtn").style.display = "none";
+  }
+} // When the user clicks on the button, scroll to the top of the document
 
-  menuBtnOpenRef.addEventListener('click', toggleMenu);
-  menuBtnCloseRef.addEventListener('click', toggleMenu);
-})();
+
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+}
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -338,5 +340,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/menu.js"], null)
-//# sourceMappingURL=/menu.0c91648c.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","js/top-btn.js"], null)
+//# sourceMappingURL=/top-btn.b1681136.js.map

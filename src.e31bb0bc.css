@@ -247,6 +247,10 @@ summary {
   display: list-item;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "DM Sans", sans-serif;
   font-weight: 500;
@@ -362,6 +366,29 @@ a {
   .header {
     padding-top: 37px;
   }
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+}
+
+.up-icon {
+  fill: #e18298;
+  width: 40px;
+  height: 40px;
+}
+#myBtn:hover .up-icon {
+  fill: #d41443;
 }
 
 .logo {
@@ -1068,6 +1095,7 @@ a {
     position: relative;
     margin-bottom: 110px;
     margin: 0 auto;
+    padding-top: 130px;
   }
 }
 .tradition-wrapper__button {
@@ -1092,7 +1120,6 @@ a {
 .tradition-wrapper__main-title {
   line-height: 38px;
   text-transform: uppercase;
-  padding-top: 130px;
   text-align: center;
   font-size: 18px;
   margin-bottom: 15px;
