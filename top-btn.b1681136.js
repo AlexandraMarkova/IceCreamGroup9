@@ -123,19 +123,25 @@ window.onscroll = function () {
   scrollFunction();
 };
 
+var btnRef = document.querySelector('#myBtn');
+
 function scrollFunction() {
   if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
-    document.getElementById("myBtn").style.display = "block";
+    btnRef.style.display = "block";
   } else {
-    document.getElementById("myBtn").style.display = "none";
+    btnRef.style.display = "none";
   }
-} // When the user clicks on the button, scroll to the top of the document
+}
 
+;
+btnRef.addEventListener('click', topFunction); // When the user clicks on the button, scroll to the top of the document
 
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
+
+;
 },{}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -164,7 +170,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50544" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59551" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
